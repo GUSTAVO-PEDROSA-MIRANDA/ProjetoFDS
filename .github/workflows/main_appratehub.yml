@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - ratehubapp
+name: Build and deploy Python app to Azure Web App - appratehub
 
 on:
   push:
@@ -30,12 +30,22 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r RateHUB/requirements.txt
+
+      - name: Cleaning testing files
+        run: |
+          rm db.sqlite3
+          rm .env
+          cd ..
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          cd RateHUB/
+          zip release.zip ./* -r
+          cd ..
+          mv RateHUB/release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
@@ -68,14 +78,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4038A7F2F7D64739B0167423174AA5E6 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_409DE3FC79094283BA6A3323B2758C6F }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_ED6CEB276DE94410B2AD33450B56FE9B }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5DAAC8B6242549BA9FE1708E36A74F53 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7C1650ACA1C74DA399D05942F4A47F48 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_69383F8546374275AAE1567178570742 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'ratehubapp'
+          app-name: 'appratehub'
           slot-name: 'Production'
           
