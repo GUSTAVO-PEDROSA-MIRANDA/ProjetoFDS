@@ -67,11 +67,11 @@
             text-decoration: none;
           }
       
-          .btn-comentarios:hover {
+        .btn-comentarios:hover {
             text-decoration: underline;
-          }
+        }
 
-          .btn {
+        .btn {
             background-color: #00a0e4;
             color: white;
             border: none;
@@ -81,12 +81,26 @@
             cursor: pointer;
             font-weight: bold;
             margin-top: 20px;
-          }
-      
-          .btn:hover {
+        }
+
+        .btn:hover {
             background-color: #007bbd;
             color: white;
+        }
+
+        .btn1 {
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            color: red;
+            cursor: pointer;
+            text-decoration: none;
           }
+      
+        .btn1:hover {
+            text-decoration: underline;
+        }
 
     </style>
 </head>
@@ -111,6 +125,7 @@
                         <th>Gênero</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,6 +140,12 @@
                             </td>
                             <td>
                                 <a href="{% url 'verMaisFilmeAdmin' filme.id %}" class="btn-comentarios">Mais informações</a>
+                            </td>
+                            <td>
+                                <form action="{% url 'deletarFilmeAdmin' filme.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn1">Deletar</button>
+                                </form>
                             </td>
                         </tr>
                     {% endfor %}

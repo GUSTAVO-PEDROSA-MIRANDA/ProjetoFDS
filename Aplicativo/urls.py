@@ -17,4 +17,5 @@ urlpatterns = [
     path('sair/', views.sair, name='sair'),
     path('filmes/<int:filme_id>/verMaisFilmeAdmin', views.verMaisFilmeAdmin, name='verMaisFilmeAdmin'),
     path('filmes/<int:filme_id>/verMaisFilmeUser', views.verMaisFilmeUser, name='verMaisFilmeUser'),
+    path('filmes/<int:filme_id>/deletarFilmeAdmin', views.deletarFilmeAdmin, name='deletarFilmeAdmin'),
 ]

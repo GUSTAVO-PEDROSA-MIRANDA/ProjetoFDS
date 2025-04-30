@@ -32,18 +32,17 @@ Cypress.Commands.add('switchToRegister', () => {
 });
 
 describe('Visualizar', () =>{
-    it('O usuário deve visualizar os filmes que estão no catalogo', () =>{  
+    it('O usuário deve visualizar os filmes que estão no catalogo e o sistema da um erro sem justificativa.', () =>{  
         cy.visit('cadastro')
         cy.login('testuser', 'password123');
         cy.get('[href="/visuFilmeUser/"]').click();
         cy.wait(2000);
     })
-    it('O usuário deve visualizar os filmes que estão no catalogo e o sistema da um erro sem justificativa.', () =>{  
+    it('O usuário deve visualizar os filmes que estão no catalogo', () =>{  
         cy.visit('cadastro')
         cy.login('testuser', 'password123');
+        cy.get('[href="/visuFilmeUser/"]').click();
         cy.wait(2000);
-        
-
     })
 })
 
