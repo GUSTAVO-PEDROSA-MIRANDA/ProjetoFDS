@@ -31,29 +31,22 @@ Cypress.Commands.add('switchToRegister', () => {
     cy.get('p > a').click();
 });
 
-describe('Login', () => {
-    it('O usuário faz o cadastro e o login inicial', () => {
-        cy.deleteAllUsers();
-
+describe('Visualizar', () =>{
+    it('O usuário deve visualizar os filmes que estão no catalogo', () =>{  
         cy.visit('cadastro')
-
-        cy.switchToRegister();
-
-        cy.createUser('testuser', 'testuser@example.com', 'password123');
-
         cy.login('testuser', 'password123');
-
-    });
-    it('O usuário faz o cadastro e falha o login.', () =>{
-        cy.deleteAllUsers();
-
+        cy.get('[href="/visuFilmeUser/"]').click();
+        cy.wait(2000);
+    })
+    it('O usuário deve visualizar os filmes que estão no catalogo e o sistema da um erro sem justificativa.', () =>{  
         cy.visit('cadastro')
+        cy.login('testuser', 'password123');
+        cy.wait(2000);
+        
 
-        cy.switchToRegister();
+    })
+})
 
-        cy.createUser('testuser', 'testuser@example.com', 'password123');
 
-        cy.login('Nome não Correspondente', 'password123');
 
-    });
-});
+

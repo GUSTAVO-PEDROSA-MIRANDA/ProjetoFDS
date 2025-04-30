@@ -31,29 +31,17 @@ Cypress.Commands.add('switchToRegister', () => {
     cy.get('p > a').click();
 });
 
-describe('Login', () => {
-    it('O usuário faz o cadastro e o login inicial', () => {
-        cy.deleteAllUsers();
-
+describe('Favoritar', () =>{
+    it('O usuário deve favoritar os filmes que estão disponiveis', () =>{
         cy.visit('cadastro')
-
-        cy.switchToRegister();
-
-        cy.createUser('testuser', 'testuser@example.com', 'password123');
-
         cy.login('testuser', 'password123');
-
+        cy.visit('visuFilmeUser')
+        cy.get(':nth-child(1) > :nth-child(5) > form > .btn-favoritar').click();
     });
-    it('O usuário faz o cadastro e falha o login.', () =>{
-        cy.deleteAllUsers();
-
+    it('O usuário tenta favoritar o filme e não consegue', () =>{
         cy.visit('cadastro')
-
-        cy.switchToRegister();
-
-        cy.createUser('testuser', 'testuser@example.com', 'password123');
-
-        cy.login('Nome não Correspondente', 'password123');
-
+        cy.login('testuser', 'password123');
+        cy.visit('visuFilmeUser')
     });
-});
+});    
+

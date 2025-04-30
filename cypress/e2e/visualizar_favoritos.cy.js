@@ -31,29 +31,24 @@ Cypress.Commands.add('switchToRegister', () => {
     cy.get('p > a').click();
 });
 
-describe('Login', () => {
-    it('O usuário faz o cadastro e o login inicial', () => {
-        cy.deleteAllUsers();
-
+describe('Visualizar os Favoritos', () =>{
+    it('O usuário deve visualizar seus Filmes Favoritados', () =>{
         cy.visit('cadastro')
-
-        cy.switchToRegister();
-
-        cy.createUser('testuser', 'testuser@example.com', 'password123');
-
         cy.login('testuser', 'password123');
+        cy.visit('visuFilmeUser')
+        cy.get(':nth-child(1) > :nth-child(5) > form > .btn-favoritar').click();
+        cy.get('.btn').click();
+        cy.wait(2000);
+        cy.get('[href="/verFavoritos/"]').click();
+        });
+        it('O usuário tenta visualizar seus Filmes Favoritados e não consegue.', () =>{
+            cy.visit('cadastro')
+            cy.login('testuser', 'password123');
+            cy.visit('visuFilmeUser')
+            cy.get(':nth-child(1) > :nth-child(5) > form > .btn-favoritar').click();
+            cy.get('.btn').click();
+            cy.wait(2000);
+            });
+    
 
-    });
-    it('O usuário faz o cadastro e falha o login.', () =>{
-        cy.deleteAllUsers();
-
-        cy.visit('cadastro')
-
-        cy.switchToRegister();
-
-        cy.createUser('testuser', 'testuser@example.com', 'password123');
-
-        cy.login('Nome não Correspondente', 'password123');
-
-    });
-});
+});    
