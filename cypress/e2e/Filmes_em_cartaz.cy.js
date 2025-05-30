@@ -1,42 +1,38 @@
-describe('Visualizar', () => {
-    it('Usuário deve se cadastrar, fazer login e visualizar os filmes em cartaz', () => {
-        cy.visit('/cadastro');
+// Comando customizado para login
+Cypress.Commands.add('login', (username, password) => {
+  cy.visit('/');  // Página de login conforme suas urls.py
+  cy.get('.container').within(() => {
+    cy.get('[type="text"]').type(username);
+    cy.get('[type="password"]').type(password);
+    cy.wait(2000);
+    cy.get('[type="submit"]').click();
+  });
+});
+describe('História 04 – Destaque de Filmes em Cartaz', () => {
+  const user = {
+    nome: 'Teste',
+    senha: 'SenhaSegura123',
+  };
 
-        // Clica no link "Cadastre-se" (alterna formulário via JS)
-        cy.get('p > a').first().click();
+  beforeEach(() => {
+    cy.login(user.nome, user.senha);
+    cy.url().should('include', '/homeUser');
+  });
 
-        // Aguarda transição e exibição do campo de confirmação de senha
-        cy.get('[name="confirmarSenha"]', { timeout: 7000 }).should('exist').and('be.visible');
+  it('Deve exibir os filmes em Cartaz ', () => {
+    cy.visit('/homeUser');
 
-        // Preenche e envia o formulário de cadastro
-        cy.get('.container').within(() => {
-            cy.get('[type="text"]').type('testuser');
-            cy.get('[type="email"]').type('testuser@email.com');
-            cy.get('[name="senha"]').type('password123');
-            cy.get('[name="confirmarSenha"]').type('password123');
-            cy.wait(500);
-            cy.get('[type="submit"]').click();
-        });
 
-        // Retorna à tela de login
-        cy.visit('/cadastro');
+  });
 
-        // Login com o usuário recém-cadastrado
-        cy.get('.container').within(() => {
-            cy.get('[type="text"]').type('testuser');
-            cy.get('[type="password"]').type('password123');
-            cy.wait(500);
-            cy.get('[type="submit"]').click();
-        });
+  it('Deve permitir acesso aos detalhes de um certo Filme', () => {
+    cy.visit('/homeUser');
 
-        // Verifica que chegou na tela homeUser
-        cy.url().should('include', '/homeUser');
+    cy.get('a[href="/filmes/verMaisMissaoImpossivelUser"]', { timeout: 10000 })
+      .should('exist')
+      .should('be.visible')
+      .click();
 
-        // Clica para visualizar filmes
-        cy.get('[href="/visuFilmeUser/"]').should('be.visible').click();
-        cy.wait(1000);
-
-        // Confirma que está vendo os filmes (ajuste o texto conforme seu conteúdo)
-        cy.get('body').should('contain.text', 'Filme');
-    });
+    cy.url().should('include', '/filmes/verMaisMissaoImpossivelUser');
+  });
 });
