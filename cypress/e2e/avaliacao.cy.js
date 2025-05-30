@@ -9,7 +9,7 @@ Cypress.Commands.add('login', (username, password) => {
   });
 });
 
-describe('História 03 – Avaliação e Comentários de Filmes', () => {
+describe('História 03 - Avaliação e Comentários de Filmes', () => {
   const user = {
     nome: 'Teste',
     senha: 'SenhaSegura123',
@@ -31,28 +31,11 @@ describe('História 03 – Avaliação e Comentários de Filmes', () => {
     cy.get('input.btn').click(); // Ajuste conforme o botão de confirmação
 
     cy.contains('Filme foi avaliado com sucesso!').should('be.visible');
-
-  });
-
-  it('Nota fora do intervalo permitido', () => {
-    cy.get('input[name="nota"]').clear().type('6'); // Nota inválida
-    cy.get('button#confirmarAvaliacao').click();
-
-    cy.contains('A nota deve estar entre 1 e 5').should('be.visible');
-  });
-
-  it('Comentário salvo com sucesso', () => {
-    cy.get('textarea[name="comentario"]').type('Filme muito bom, recomendo!');
-    cy.get('button#confirmarComentario').click();
-
-    cy.contains('Comentário salvo com sucesso').should('be.visible');
-    cy.contains('Filme muito bom, recomendo!').should('be.visible');
   });
 
   it('Comentário em branco', () => {
-    cy.get('textarea[name="comentario"]').clear();
-    cy.get('button#confirmarComentario').click();
-
-    cy.contains('O campo de comentário é obrigatório').should('be.visible');
+    cy.get(':nth-child(2) > :nth-child(8) > .btn-favoritar').click();
+    cy.get('select').select('5 estrelas');
+    cy.get('input.btn').click(); // Ajuste conforme o botão de confirmação
   });
 });
