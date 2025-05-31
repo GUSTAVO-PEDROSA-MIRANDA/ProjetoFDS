@@ -91,25 +91,25 @@ Abra um Pull Request com uma descrição das alterações realizadas.
 <strong>1º) No repositório que você deu fork, clique em ```Contribute```:</strong>
 
 <p align="center">
-  <img src="">
+  <img src="Aplicativo/static/imagens/contributing2.png">
 </p>
 
 <strong>2º) Depois clique em ```Open pull request```:</strong>
 
 <p align="center">
-  <img src="" width="300">
+  <img src="Aplicativo/static/imagens/contributing3.png" width="300">
 </p>
 
 <strong>3º) Agora selecione o repositório que você deu fork e a branch que você fez suas alterações:</strong>
 
 <p align="center">
-  <img src="">
+  <img src="Aplicativo/static/imagens/contributing4.png">
 </p>
 
 <strong>4º) Então, para criar seu PR, clique em ```Create pull request```:</strong>
 
 <p align="center">
-  <img src="" width="300">
+  <img src="Aplicativo/static/imagens/contributing5.png" width="300">
 </p>
 
 <strong>5º) No final:</strong>
@@ -139,7 +139,7 @@ Fale com a gente:
 <br>
 - [Arthur von Sohsten](https://github.com/arthurvonsohsten) - alvs@cesar.school
 <br>
-- [Victor Vilela](https://github.com/) - vmv2@cesar.school
+- [Victor Vilela](https://github.com/VI170105/VI170105) - vmv2@cesar.school
 <br>
 
 <br>
