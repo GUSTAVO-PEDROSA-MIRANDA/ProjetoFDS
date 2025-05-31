@@ -8,11 +8,12 @@ RateHUB é um software desenvolvido no framework Django, projetado para oferecer
 # Membros
 
 <br>
-<p style="text-align: center; text-decoration: none;"> Luca Ribeiro Albuquerque </p>
-<p style="text-align: center; text-decoration: none;"> Ricardo Machado Valadares Lins </p>
-<p style="text-align: center; text-decoration: none;"> Arthur de Lima Von Sohsten  </p>
-<p style="text-align: center; text-decoration: none;"> Gustavo Pedrosa Miranda </p>
-<p style="text-align: center; text-decoration: none;"> Victor de Matos Vilela </p>
+
+- [Luca Ribeiro Albuquerque](https://github.com/LucaAlbuquerque) - lra3@cesar.school
+- [Victor de Matos Vilela](https://github.com/Vl170105) - vmv2@cesar.school
+- [Ricardo Machado Valadares Lins](https://github.com/ricardomvlins) - rmvl@cesar.school
+- [Gustavo Pedrosa Miranda](https://github.com/GUSTAVO-PEDROSA-MIRANDA) - gpm@cesar.school
+- [Arthur de Lima Von Sohsten](https://github.com/arthurvonsohsten) - alvs@cesar.school
 
 <br>
 
