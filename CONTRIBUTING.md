@@ -8,7 +8,7 @@ Se você chegou até aqui, é provável que tenha interesse em contribuir com o 
 Você pode colocar uma nova funcionalidade em prática, solucionar alguma issue do projeto (botão abaixo) ou adicionar uma melhoria.
 <br>
 <p align="center">
-  <a href="https://github.com/GUSTAVO-PEDROSA-MIRANDA/ProjetoFDS/issuess">
+  <a href="https://github.com/GUSTAVO-PEDROSA-MIRANDA/ProjetoFDS/issues">
     <img src="https://img.shields.io/badge/Ver issues-7f1d1d?style=for-the-badge&logoColor=white"/>
   </a>
 </p>
