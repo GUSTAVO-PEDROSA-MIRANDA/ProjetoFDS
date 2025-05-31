@@ -27,7 +27,7 @@ beforeEach(() => {
     cy.get('[href="/visuFilmeAdmin/"]').click();
     cy.visit('http://localhost:8000/visuFilmeAdmin/');
     cy.get(':nth-child(5) > .btn-comentarios').click();
-    cy.visit('http://localhost:8000/filmes/9/visuComentarios/');
+    cy.visit('http://localhost:8000/filmes/12/visuComentarios/');
     cy.get(':nth-child(4) > form > .btn').click();
   });
 });
