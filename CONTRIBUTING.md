@@ -133,13 +133,13 @@ Se precisar de qualquer coisa ou tiver dúvidas durante o processo, não hesite 
 Fale com a gente:
 - [Luca Albuquerque](https://github.com/LucaAlbuquerque) - lra3@cesar.school
 <br>
-- [Gustavo Pedrosa](https://github.com/GUSTAVO-PEDROSA-MIRANDA) - hft@cesar.school
+- [Gustavo Pedrosa](https://github.com/GUSTAVO-PEDROSA-MIRANDA) - gpm@cesar.school
 <br>
 - [Ricardo Machado](https://github.com/ricardomvlins) - rmvl@cesar.school
 <br>
 - [Arthur von Sohsten](https://github.com/arthurvonsohsten) - alvs@cesar.school
 <br>
-- [Victor Vilela](https://github.com/VI170105/VI170105) - vmv2@cesar.school
+- [Victor Vilela](https://github.com/VI170105) - vmv2@cesar.school
 <br>
 
 <br>
