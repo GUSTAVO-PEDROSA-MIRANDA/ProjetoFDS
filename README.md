@@ -200,7 +200,10 @@ RateHUB é um software desenvolvido no framework Django, projetado para oferecer
 ###  Screencast dos Testes Automatizados
 
 <p style="text-align: center; text-decoration: none;">
-  
+  <a href="https://youtu.be/_xz4SXWcssQ?si=QtyNZoeamna-MInV" style="text-decoration: none;">
+    <span>🔗 Screencast Testes Automatizados </span>
+  </a>
+</p>  
 </p>
 
 <br>
